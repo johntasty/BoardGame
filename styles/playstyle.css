@@ -1,9 +1,11 @@
 
-
+.play{
+    align-content: center;
+}
 #canvas {    
-    position: fixed;
+    position: relative;
     left: 2%;
-    top: 10%;
+    top: 15%;
     
     /*transform: translate(-50%, -50%);*/
     width: 45%;
@@ -11,7 +13,9 @@
     text-align: right;
   }
 
-h1 {
+#result {
+    position: absolute;
+    left: 50%;
     text-align: center;
     
 } 
@@ -66,7 +70,7 @@ h1 {
 #storageClear {
   height: 45px;
   width: 100px;  
-  position: fixed;
+  position: relative;
   bottom: 20%;
   
   
@@ -74,7 +78,7 @@ h1 {
 #endturn{
   height: 45px;
   width: 100px;  
-  position: fixed;
+  position: relative;
   bottom: 20%;
-  right: 5%;
+  left: 20%;
 }
