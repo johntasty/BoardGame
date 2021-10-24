@@ -6,7 +6,7 @@
   
   
     #qr-canvas {
-    position: absolute;    
+    position: relative;    
     width: calc(100% - 200px);
     max-width: 150px;
     max-height: 150px;
