@@ -1,24 +1,31 @@
-canvas {
+.elements{
+  align-content: left;
+  border: 1px solid black;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+#canvas {
     
-    position: absolute;
-    left: 25%;
-    top: 45%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 2%;    
+    /*transform: translate(-50%, -50%);*/
     width: 45%;
     height: 50%;
         
     text-align: right;
   }
-h1 {
-    min-width: 100%;
-    text-align:center;
+#result {  
+  position: absolute;
+  left: 45%;
+  text-align: center;
 }
+
 #PlayButton{
   width:150px;
   height: 50px;
-  position:absolute;
-  margin-left: -50px;   
-  left:50%;  
+  position:relative;   
+  left: 45%; 
   bottom:15%; 
   
 }
@@ -37,31 +44,23 @@ h1 {
 		transform: translate3d(0,-50%,0) rotate(45deg);
 }
 #saveAva{
-  position: absolute;
+  position: relative;
   width: 50px;
-  height: 20px;
-  bottom: 25%;
-  left: 22%;
+  height: 20px;  
+  left: 0;
 }
 #box1{
   position: absolute;
   left: 75%;
-  top: 45%;
+  top: 40%;
   text-align: justify;
   text-align-last: center;
   box-sizing: content-box;  
   width: 40%;
-  height: 35%;
+  height: 55%;
   transform: translate(-50%, -50%);
   padding: 10px;  
   border: 3px solid black;
   font-family: Helvetica,Arial, sans-serif;
-}
-#title{
-  font-weight: bold;
-  font-size: x-large;
-} 
-#midline{
-  font-weight: bold;
-  font-size: large;
+  overflow-x: scroll;
 }

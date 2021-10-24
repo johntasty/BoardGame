@@ -1,18 +1,21 @@
 
-
+.play{
+  align-content: center;
+}
 #canvas {    
-    position: fixed;
+    position: relative;
     left: 2%;
-    top: 10%;
-    
+    top: 35%;    
     /*transform: translate(-50%, -50%);*/
     width: 45%;
     height: 50%;        
     text-align: right;
   }
 
-h1 {
-    text-align: center;
+#result{
+  position: absolute;
+  left: 50%;
+  text-align: center;
     
 } 
 #foodCount{
@@ -58,15 +61,11 @@ h1 {
   font-weight: bold;
   font-size: x-large;
 }
-.buttons{  
-  position: absolute;
-  bottom: 10%;
-  left: 45%;
-}
+
 #storageClear {
   height: 45px;
   width: 100px;  
-  position: fixed;
+  position: relative;
   bottom: 20%;
   
   
@@ -74,7 +73,7 @@ h1 {
 #endturn{
   height: 45px;
   width: 100px;  
-  position: fixed;
+  position: relative;
   bottom: 20%;
-  right: 5%;
+  left: 20%;
 }
