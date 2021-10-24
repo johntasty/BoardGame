@@ -1,21 +1,16 @@
 
-  #container {
-    text-align: right;
+#container {
+    text-align: left;
     margin: 0;
-    position: absolute;
-    bottom: 10%;
-    left: 45%;
-    
   }
   
-  #qr-canvas {
+  
+    #qr-canvas {
     position: absolute;    
-    bottom: 10%;
     width: calc(100% - 200px);
     max-width: 150px;
     max-height: 150px;
   }
-  
   #btn-scan-qr {
     cursor: pointer;
   }
