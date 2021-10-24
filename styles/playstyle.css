@@ -1,21 +1,22 @@
 
 .play{
-  align-content: center;
+    align-content: center;
 }
 #canvas {    
     position: relative;
     left: 2%;
-    top: 35%;    
+    top: 15%;
+    
     /*transform: translate(-50%, -50%);*/
     width: 45%;
     height: 50%;        
     text-align: right;
   }
 
-#result{
-  position: absolute;
-  left: 50%;
-  text-align: center;
+#result {
+    position: absolute;
+    left: 50%;
+    text-align: center;
     
 } 
 #foodCount{
@@ -61,7 +62,11 @@
   font-weight: bold;
   font-size: x-large;
 }
-
+.buttons{  
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+}
 #storageClear {
   height: 45px;
   width: 100px;  
