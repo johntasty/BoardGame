@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Game</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+    <!-- link to the p5.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" integrity="sha512-rMaqGbYalDaQz0lWNF2L8DHPtf4NW+gSZomExS0LcsNyRS4Rmj21+dt97XfXCZE/E569eX72Bh//Jt1EpStgiA==" crossorigin="anonymous"></script>
+    <!-- link to your own JavaScript file -->
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js">
+    </script>
+    <script src="js/sketch.js" defer></script>
+    <script src="js/qrCodeScanner.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles/playstyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/qr.css">
+</head>
+<body>
+    <h1>Let's Play</h1>
+    <div id="container">        
+    
+        <a id="btn-scan-qr">
+          <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+        <a/>  
+        <canvas hidden="" id="qr-canvas"></canvas>
+  
+        <div id="qr-result" hidden="">
+          <b>Data:</b> <span id="outputData"></span>
+        </div>
+    </div>
+
+        <div class="foodinv">
+            <p id="foodCount">Food Count:</p>
+            <p id="food"></p>
+        </div>    
+        <div class="moneyinv">
+            <p id="moneyCount">€ :</p>
+            <p id="money"></p>
+        </div>
+        <div class="studyinv">
+            <p id="movementCounter">Movement Points :</p>
+            <p id="movement"></p>
+        </div>
+    
+    <div class="play">
+        <canvas id="canvas" style="border: 2px solid #000"></canvas>    
+        <br>    
+        <button id="storageClear">Exit Game</button>
+        <button id="endturn"> End Turn</button>
+    </div>  
+    
+
+</body>
+</html>

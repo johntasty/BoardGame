@@ -1,0 +1,80 @@
+
+
+#canvas {    
+    position: fixed;
+    left: 2%;
+    top: 10%;
+    
+    /*transform: translate(-50%, -50%);*/
+    width: 45%;
+    height: 50%;        
+    text-align: right;
+  }
+
+h1 {
+    text-align: center;
+    
+} 
+#foodCount{
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  font-weight: bold;
+  font-size: x-large;
+} 
+#food{
+  position: absolute;
+  right: 5%;
+  top: 25%;
+  font-weight: bold;
+  font-size: x-large;
+}
+#moneyCount{
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  font-weight: bold;
+  font-size: x-large;
+}
+#money{
+  position: absolute;
+  right: 5%;
+  top: 30%;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#movementCounter{
+  position: absolute;
+  right: 10%;
+  top: 35%;
+  font-weight: bold;
+  font-size: x-large;
+}
+#movement{
+  position: absolute;
+  right: 5%;
+  top: 35%;
+  font-weight: bold;
+  font-size: x-large;
+}
+.buttons{  
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+}
+#storageClear {
+  height: 45px;
+  width: 100px;  
+  position: fixed;
+  bottom: 20%;
+  
+  
+}
+#endturn{
+  height: 45px;
+  width: 100px;  
+  position: fixed;
+  bottom: 20%;
+  right: 5%;
+}

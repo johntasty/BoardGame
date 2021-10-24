@@ -1,0 +1,48 @@
+canvas {    
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 40%;        
+    text-align: right;
+  }
+  h1 {
+    text-align: center;
+} 
+
+  #moneyCount{
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  #money{
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    font-weight: bold;
+    font-size: x-large;
+  }  
+
+  .buttons{
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    
+}
+#buy{
+    position: relative;
+    right: 50%;
+    height: 40px;
+    width: 100px;
+    
+}
+#cancel{
+    position: relative;
+    left: 50%;
+    height: 40px;
+    width: 100px;
+    
+}

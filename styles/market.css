@@ -1,0 +1,79 @@
+canvas {    
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 40%;        
+    text-align: right;
+  }
+  h1 {
+    text-align: center;
+} 
+#foodCount{
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    font-weight: bold;
+    font-size: x-large;
+  } 
+  #food{
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    font-weight: bold;
+    font-size: x-large;
+  }  
+  #moneyCount{
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  #money{
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    font-weight: bold;
+    font-size: x-large;
+  }  
+  
+  .buttons{
+      position: absolute;
+      bottom: 15%;
+      left: 10%;
+      
+  }
+  #show{
+      position: relative;
+      height: 20px;
+      width: 50px;
+      text-align: center;      
+      
+  }
+  #decreaseButton{
+    position: relative;
+    height: 30px;
+    width: 50px;      
+  }
+  #increaseButton{ 
+    position: relative;    
+    height: 30px;
+    width: 50px;    
+    
+  }
+#buy{
+    position: absolute;
+    right: 50%;
+    height: 40px;
+    width: 100px;
+    
+}
+#cancel{
+    position: absolute;
+    left: 50%;
+    height: 40px;
+    width: 100px;
+    
+}
