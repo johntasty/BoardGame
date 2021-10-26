@@ -4,7 +4,7 @@ var bike = Number(localStorage.getItem('bikeInv'));
 var bikeCost = 4;
 //display to web all quantities
 document.getElementById("money").innerHTML = money;
-document.getElementById("food").innerHTML = food;
+
 document.getElementById("bike").innerHTML = bike;
 
 //logic for buy
