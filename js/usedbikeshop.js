@@ -1,10 +1,11 @@
 let movement = Number(localStorage.getItem('movementPoints'));
 var money = Number(localStorage.getItem('moneyInv'));
 var bike = Number(localStorage.getItem('bikeInv'));
+
 var bikeCost = 2;
 //display to web all quantities
 document.getElementById("money").innerHTML = money;
-document.getElementById("food").innerHTML = food;
+
 document.getElementById("bike").innerHTML = bike;
 
 //logic for buy

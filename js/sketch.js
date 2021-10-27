@@ -8,8 +8,15 @@ var movement = Number(localStorage.getItem('movementPoints'));
 
 document.getElementById('endturn').onclick = function() {
   food -= 1;
+  if (food <= 0){
+    movement -=1;    
+  };
+  localStorage.setItem('movementPoints', movement);
   localStorage.setItem('foodInv', food);
   document.getElementById("food").innerHTML = food;
+  document.getElementById("movement").innerHTML = movement;
+  
+
 }
 document.getElementById("food").innerHTML = food; 
 document.getElementById('money').innerHTML = money;

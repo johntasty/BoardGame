@@ -1,12 +1,12 @@
+
 .elements{
   align-content: left;
-  
   position: absolute;
   top: 25%;
   width: 100%;
+  
 }
-#canvas {
-    
+#canvas {    
     position: relative;
     left: 2%;    
     /*transform: translate(-50%, -50%);*/
@@ -15,18 +15,18 @@
         
     text-align: right;
   }
-#result {  
-  position: absolute;
-  left: 45%;
+h1 {  
+  
   text-align: center;
+  
 }
 
 #PlayButton{
-  width:150px;
-  height: 50px;
-  position:relative;   
+  position:relative; 
+  width:10%;
+  height: 10%;    
   left: 45%; 
-  bottom:15%; 
+  bottom:0%;   
   
 }
 #headSelect{
@@ -56,7 +56,7 @@
   text-align: justify;
   text-align-last: center;
   box-sizing: content-box;  
-  width: 40%;
+  width: 45%;
   height: 55%;
   transform: translate(-50%, -50%);
   padding: 10px;  

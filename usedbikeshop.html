@@ -14,26 +14,20 @@
 </head>
 <body>
     
-    <h1>Bike Shop</h1>
-    
-    <canvas id="canvas" style="border: 2px solid #000"></canvas>
-    <br><br>
-    <div class="buttons">    
+    <h1>Used Bike Shop</h1>
+    <div class="elements">
+        <div class="play">
+        <canvas id="canvas" style="border: 2px solid #000"></canvas>
+        <br><br>      
         <button id="buy">Buy</button>
-        <button id="cancel">Cancel</button>
-    </div>
-    <div>
-        <p id="foodCount">Food Count:</p>
-        <p id="food"></p>
-    </div> 
-    <div id="moneyCounter">
-        <p id="moneyCount">€ :</p>
-        <p id="money"></p>
-    </div>
-    <div id="bikeCounter">
-        <p id="bikecounter">Bike: </p>
-        <p id="bike"></p>
-    </div>
+        <button id="cancel">Home</button>
+        </div>
     
+        <div class="inventory">
+        <b>€ : </b><span id="money"></span>
+        <br><br>
+        <b>Bike : </b><span id="bike"></span>
+        </div>
+    </div>
 </body>
 </html>

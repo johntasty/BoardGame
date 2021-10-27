@@ -19,6 +19,7 @@
     <div id="result">
         <h1>Let's Play</h1>
     </div>
+    <div class="contain">
     <div id="container">     
         <a id="btn-scan-qr">
           <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
@@ -32,19 +33,14 @@
            <span id="outputData"></span>
         </div>
     </div>
-
-        <div class="foodinv">
-            <p id="foodCount">Food Count:</p>
-            <p id="food"></p>
+    <div class="elements">
+    <div class="foodinv">
+            <b>Food Count: </b><span id="food"></span>
+            <br><br>       
+            <b>€ :</b><span id="money"></span>                
+            <br><br>        
+            <b>Movement :</b><span id="movement"></span>
         </div>    
-        <div class="moneyinv">
-            <p id="moneyCount">€ :</p>
-            <p id="money"></p>
-        </div>
-        <div class="studyinv">
-            <p id="movementCounter">Movement Points :</p>
-            <p id="movement"></p>
-        </div>
     
     <div class="play">
         <canvas id="canvas" style="border: 2px solid #000"></canvas>    
@@ -52,7 +48,7 @@
         <button id="storageClear">Exit Game</button>
         <button id="endturn"> End Turn</button>
     </div>  
-    
-
+    </div>
+    </div>
 </body>
 </html>

@@ -1,48 +1,59 @@
-canvas {    
-    position: absolute;
-    left: 20%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    width: 35%;
-    height: 40%;        
-    text-align: right;
+.elements{
+  align-content: left;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+.play{
+  align-content: center;
+}
+#canvas {        
+    position: relative;
+    left: 2%;    
+    /*transform: translate(-50%, -50%);*/
+    width: 45%;
+    height: 50%;        
+    text-align: right;  
   }
-  h1 {
+
+h1 {
     text-align: center;
 } 
 
-  #moneyCount{
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    font-weight: bold;
-    font-size: x-large;
-  }
-  #money{
-    position: absolute;
-    right: 5%;
-    top: 30%;
-    font-weight: bold;
-    font-size: x-large;
+.inventory{
+  position: absolute;
+  left: 75%;
+  top: 45%;
+  text-align: justify;
+  text-align-last: right;
+  box-sizing: content-box;  
+  width: 25%;
+  height: 35%;
+  transform: translate(-50%, -50%);
+  padding: 5px;  
+  font-family: Helvetica,Arial, sans-serif;
+  overflow-x: scroll;
+  font-size: x-large;
+  
+}
+  #money{   
+    font-weight: bold;   
   }  
 
-  .buttons{
-    position: absolute;
-    bottom: 30%;
-    left: 30%;
-    
-}
+
 #buy{
-    position: relative;
-    right: 50%;
-    height: 40px;
-    width: 100px;
+  text-align: center;
+  position:relative; 
+  width:15%;
+  height: 15%;    
+  left: 30%; 
+  bottom:0%; 
     
 }
 #cancel{
-    position: relative;
-    left: 50%;
-    height: 40px;
-    width: 100px;
-    
+  text-align: center;
+  position: relative;
+  width: 15%;
+  height: 15%;  
+  left: 0;
 }

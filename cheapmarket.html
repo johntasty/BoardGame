@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Realtor</title>
+    <title>CheapMarket</title>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
     <!-- link to the p5.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" integrity="sha512-rMaqGbYalDaQz0lWNF2L8DHPtf4NW+gSZomExS0LcsNyRS4Rmj21+dt97XfXCZE/E569eX72Bh//Jt1EpStgiA==" crossorigin="anonymous"></script>
     <!-- link to your own JavaScript file -->
-    <script src="js/house.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="styles/house.css">
+    <script src="js/cheapmarket.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles/cheapmarket.css">
     
 </head>
 <body>
     
-    <h1>Housing</h1>
-    <div class="elements">
-        <div class="play">
-        <canvas id="canvas" style="border: 2px solid #000"></canvas>
-        <br><br>        
+    <h1>Cheap Supermarket</h1>
+    
+    <canvas id="canvas" style="border: 2px solid #000"></canvas>
+    <br><br>
+    <div class="buttons">
+        <button id="decreaseButton">-</button>
+        <input type="text" id="show" readonly>
+        <button id="increaseButton">+</button>
+        <br>
         <button id="buy">Buy</button>
         <button id="cancel">Cancel</button>
-        </div>
-    
-        <div class="inventory">
-        <b>€ : </b><span id="money"></span>
-        </div>
-   </div>
+    </div>
+    <div>
+        <p id="foodCount">Food Count:</p>
+        <p id="food"></p>
+    </div> 
+    <div id="moneyCounter">
+        <p id="moneyCount">€ :</p>
+        <p id="money"></p>
+    </div>
     
 </body>
 </html>
