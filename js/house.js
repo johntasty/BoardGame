@@ -1,9 +1,14 @@
 var money = Number(localStorage.getItem('moneyInv'));
 var house = Number(localStorage.getItem('houseInv'));
-var houseCost = 6;
+var houseCost = 0;
+var minimum = 4;
+var maximum = 6;
 //display to web all quantities
 document.getElementById("money").innerHTML = money;
-
+window.onload = function (){
+    houseCost = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+    document.getElementById('cost').innerHTML = houseCost;
+}
 
 //logic for buy
 document.getElementById('buy').onclick = function(){
