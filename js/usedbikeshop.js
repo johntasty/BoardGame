@@ -27,5 +27,9 @@ document.getElementById('buy').onclick = function(){
         document.getElementById("money").innerHTML = money;
         document.getElementById("bike").innerHTML = bike;
         window.location.reload();
+        }
 }
+
+document.getElementById('cancel').onclick = function() {
+    location.href = 'play.html';
 }
