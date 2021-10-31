@@ -43,6 +43,4 @@ document.getElementById('storageClear').onclick = function() {
   location.href = "index.html"
 }
 
-document.getElementById('test').onclick = function() {
-  location.href = "cardone.html";
-}
+
