@@ -5,6 +5,7 @@ var studyTokens = 0;
 var bikeInv = 0;
 var house = 0;
 var movement = 3;
+
 window.onload = function () {
     var avatarhead = new Image();
     var avatarheadnum = Math.floor(Math.random()*4)+1;
@@ -13,6 +14,7 @@ window.onload = function () {
     avatarhead.onload = function(){
         buildAvatar();
     }
+    
     function buildAvatar(){
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');  

@@ -146,3 +146,56 @@ h1{
   background-color: #008891;
    
 }
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+#canvasrip{
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+#popup {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  
+  width: 500px;
+  height: 500px;
+  margin-left: -100px; /*Half the value of width to center div*/
+  margin-top: -100px; /*Half the value of height to center div*/
+  z-index: 200;
+  
+}
+@media screen and (orientation: portrait) {
+  #popup {      
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    
+    width: 10%;
+    height: 10%;
+    margin-left: -100px; /*Half the value of width to center div*/
+    margin-top: -100px; /*Half the value of height to center div*/
+    z-index: 200;
+    
+  }
+}
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.popupcontent {
+  padding: 10px;
+}

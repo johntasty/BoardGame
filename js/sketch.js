@@ -6,6 +6,39 @@ var money = Number(localStorage.getItem('moneyInv'));
 var study = Number(localStorage.getItem('studyInv'));
 var movement = Number(localStorage.getItem('movementPoints'));
 
+var closePopup = document.getElementById("popupclose");
+var overlay = document.getElementById("overlay");
+var popup = document.getElementById("popup");
+
+let gif;
+function preload(){
+    
+    url = "img/v1.gif"
+    gif = loadImage(url);
+}
+function setup(){
+    let cvn = createCanvas(500,450);
+    cvn.parent('canvasrip');    
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+function draw(){
+    image(gif,0,0);
+}
+// Close Popup Event
+overlay.onclick = function(){
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+}
+closePopup.onclick = function() {
+    
+  overlay.style.display = 'none';
+  popup.style.display = 'none';
+};
+// Show Overlay and Popup
+
+
 document.getElementById('endturn').onclick = function() {
   food -= 1;
   if (food <= 0){
@@ -15,6 +48,10 @@ document.getElementById('endturn').onclick = function() {
   localStorage.setItem('foodInv', food);
   document.getElementById("food").innerHTML = food;
   document.getElementById("movement").innerHTML = movement;
+  if (movement <= 0){
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+    }
   
 
 }
@@ -27,7 +64,7 @@ window.onload = function () {
     var avatarhead = new Image();
     
     avatarhead.src = "img/" + avatarheadname;
-
+ 
   avatarhead.onload = function(){
     buildAvatar();
 }
