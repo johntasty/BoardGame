@@ -25,5 +25,7 @@ document.getElementById('PlayButton').onclick = function(){
     localStorage.setItem('moneyInv', money.toString());
     location.href = "play.html";
     }
-
+document.getElementById('home').onclick = function (){
+        location.href = "play.html"
+    }
 

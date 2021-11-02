@@ -7,7 +7,7 @@ var bikeCost = 2;
 document.getElementById("money").innerHTML = money;
 
 document.getElementById("bike").innerHTML = bike;
-
+document.getElementById("usedbikeCost").innerHTML = bikeCost;
 //logic for buy
 document.getElementById('buy').onclick = function(){
     if (money < bikeCost){

@@ -8,6 +8,25 @@ document.getElementById("money").innerHTML = money;
 window.onload = function (){
     houseCost = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
     document.getElementById('cost').innerHTML = houseCost;
+
+    var housebg = new Image();
+    var housenum = Math.floor(Math.random()*5)+1;
+    var housename = "house" + housenum + ".png";
+    housebg.src = "img/" + housename;
+
+    housebg.onload = function(){
+        house();
+    }
+
+    function house(){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');  
+        var scale = Math.min(canvas.width/housebg.width, canvas.height / housebg.height);
+        var x = (canvas.width/2) - (housebg.width/2) * scale;
+        var y = (canvas.height/2) - (housebg.height/2) * scale;
+        ctx.drawImage(housebg, x, y, housebg.width * scale, housebg.height * scale);
+    }  
+
 }
 
 //logic for buy
@@ -16,18 +35,21 @@ document.getElementById('buy').onclick = function(){
         alert("Not Enough Money!")
         
     }
-    else if(houseCost > 0){
+    else if(house > 0){
         alert("You already have a House")
     }
     else {
+        alert("Congratulations on your new house!")
         var moneyTotal = money - houseCost;
         localStorage.setItem('moneyInv', moneyTotal.toString());
         house = house + 1;
         localStorage.setItem('houseInv',house.toString());
+        localStorage.setItem('houseName', housename.toString());
         document.getElementById("money").innerHTML = money;        
         window.location.reload();
 }
 }
+
 document.getElementById('cancel').onclick = function() {
     location.href = 'play.html';
 }

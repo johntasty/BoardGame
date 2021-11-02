@@ -3,6 +3,7 @@ var money = Number(localStorage.getItem('moneyInv'));
 var bike = Number(localStorage.getItem('bikeInv'));
 var bikeCost = 4;
 //display to web all quantities
+document.getElementById("bikeCost").innerHTML = bikeCost;
 document.getElementById("money").innerHTML = money;
 
 document.getElementById("bike").innerHTML = bike;

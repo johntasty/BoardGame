@@ -17,10 +17,11 @@ document.getElementById('buy').onclick = function(){
         alert("Not Enough Money!")
         
     }
-    else if(houseCost > 0){
+    else if(house > 0){
         alert("You already have a House")
     }
     else {
+        alert("Congratulations on your new house!")
         var moneyTotal = money - houseCost;
         localStorage.setItem('moneyInv', moneyTotal.toString());
         house = house + 1;
