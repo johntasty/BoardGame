@@ -23,9 +23,14 @@
     <div id="container">     
         <a id="btn-scan-qr">
           <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
-        <a/>  
-        <canvas hidden="" id="qr-canvas"></canvas>
-  
+        <a/> 
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <canvas hidden="" id="qr-canvas"></canvas>
+                
+            </div>    
+        </div>     
         <div id="qr-result" hidden="">
             <div id="databutt">
              <button id="outData">Click Me</button>

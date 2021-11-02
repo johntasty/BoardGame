@@ -9,7 +9,8 @@ const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
 var btnData = document.getElementById("outData");
 let scanning = false;
-
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 qrcode.callback = res => {
   if (res) {
     //outputData.innerText = res;
@@ -25,6 +26,7 @@ qrcode.callback = res => {
     qrResult.hidden = false;
     canvasElement.hidden = true;
     btnScanQR.hidden = false;
+    modal.style.display = "none";
   }
 };
 
@@ -33,6 +35,7 @@ btnScanQR.onclick = () => {
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
       scanning = true;
+      modal.style.display = "block";
       qrResult.hidden = true;
       btnScanQR.hidden = true;
       canvasElement.hidden = false;
@@ -58,4 +61,14 @@ function scan() {
   } catch (e) {
     setTimeout(scan, 300);
   }
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    window.location.reload();
+  }
+}
+span.onclick = function() {
+  modal.style.display = "none";
+  
 }
