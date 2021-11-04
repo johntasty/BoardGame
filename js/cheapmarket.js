@@ -27,13 +27,28 @@ document.getElementById('buy').onclick = function(){
         foodAmount = 0;
         document.getElementById("show").value = foodAmount;
     }
-    else {var foodAmountTotal = food + foodAmount;
-    localStorage.setItem('foodInv', foodAmountTotal.toString());
-    money = money - (foodAmount / 2);
-    localStorage.setItem('moneyInv',money.toString());
-    document.getElementById("money").innerHTML = money;
-    document.getElementById("food").innerHTML = food;
-    window.location.reload();}
+    else {
+        
+        if(food < 0 ){
+            food = 0;
+            var foodAmountTotal = food + foodAmount;
+            localStorage.setItem('foodInv', foodAmountTotal.toString());
+            money = money - foodAmount;
+            localStorage.setItem('moneyInv',money.toString());
+            document.getElementById("money").innerHTML = money;
+            document.getElementById("food").innerHTML = food;
+            window.location.reload();
+        }
+        else {
+            var foodAmountTotal = food + foodAmount;
+            localStorage.setItem('foodInv', foodAmountTotal.toString());
+            money = money - foodAmount;
+            localStorage.setItem('moneyInv',money.toString());
+            document.getElementById("money").innerHTML = money;
+            document.getElementById("food").innerHTML = food;
+            window.location.reload();
+            }
+        }
 }
 
 //redirects to play page

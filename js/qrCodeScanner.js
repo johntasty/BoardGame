@@ -7,7 +7,6 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
-var btnData = document.getElementById("outData");
 let scanning = false;
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
@@ -15,9 +14,7 @@ qrcode.callback = res => {
   if (res) {
     //outputData.innerText = res;
     scanning = false;
-    document.getElementById('outData').onclick = function(){
-      location.href = res;
-    }
+    location.href = res;
 
     video.srcObject.getTracks().forEach(track => {
       track.stop();

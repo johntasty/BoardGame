@@ -15,10 +15,10 @@ window.onload = function (){
     housebg.src = "img/" + housename;
 
     housebg.onload = function(){
-        house();
+        housefun();
     }
 
-    function house(){
+    function housefun(){
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');  
         var scale = Math.min(canvas.width/housebg.width, canvas.height / housebg.height);
@@ -26,29 +26,29 @@ window.onload = function (){
         var y = (canvas.height/2) - (housebg.height/2) * scale;
         ctx.drawImage(housebg, x, y, housebg.width * scale, housebg.height * scale);
     }  
-
+    document.getElementById('buy').onclick = function(){
+        if (money < houseCost){
+            alert("Not Enough Money!")
+            
+        }
+        else if(house > 0){
+            alert("You already have a House")
+        }
+        else {
+            alert("Congratulations on your new house!")
+            var moneyTotal = money - houseCost;
+            localStorage.setItem('moneyInv', moneyTotal.toString());
+            house = house + 1;
+            localStorage.setItem('houseInv',house.toString());
+            localStorage.setItem('houseName', housename.toString());
+            document.getElementById("money").innerHTML = money;        
+            location.href = 'play.html';
+        }
+    }
 }
 
 //logic for buy
-document.getElementById('buy').onclick = function(){
-    if (money < houseCost){
-        alert("Not Enough Money!")
-        
-    }
-    else if(house > 0){
-        alert("You already have a House")
-    }
-    else {
-        alert("Congratulations on your new house!")
-        var moneyTotal = money - houseCost;
-        localStorage.setItem('moneyInv', moneyTotal.toString());
-        house = house + 1;
-        localStorage.setItem('houseInv',house.toString());
-        localStorage.setItem('houseName', housename.toString());
-        document.getElementById("money").innerHTML = money;        
-        window.location.reload();
-}
-}
+
 
 document.getElementById('cancel').onclick = function() {
     location.href = 'play.html';
