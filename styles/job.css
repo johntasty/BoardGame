@@ -26,10 +26,31 @@
     width:10%;
     height: 10%;    
     left: 45%; 
-    bottom:0%;   
+    bottom:0%; 
+    display: inline-block;
+    margin: 20px auto auto;
+    padding: 10px 0px;
+    max-width: 200px;
+    min-width: 100px;
+    color: #fff;
+    border-style: none;
+    font-size: 120%;
+    opacity: 1;
+    background-color: #008891;  
     
   }
- 
+ #home{
+  display: inline-block;
+  margin: 20px auto auto;
+  padding: 10px 20px;
+  max-width: 200px;
+  min-width: 100px;
+  color: #fff;
+  border-style: none;
+  font-size: 120%;
+  opacity: 1;
+  background-color: #008891;
+ }
   #box1{
     position: absolute;
     left: 75%;
