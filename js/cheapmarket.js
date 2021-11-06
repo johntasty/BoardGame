@@ -57,7 +57,7 @@ document.getElementById('cancel').onclick = function (){
 }
 window.onload = function(){
     var marketbg = new Image();
-    var marketnum = Math.floor(Math.random()*3)+1;
+    var marketnum = Math.floor(Math.random()*4)+1;
     var marketname = "market" + marketnum + ".png";
     marketbg.src = "img/" + marketname;
 
@@ -68,6 +68,12 @@ window.onload = function(){
     function market(){
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');  
+        var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+        var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+        var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+        var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+        ctx.fillStyle = bgcol;
+        ctx.fillRect(0, 0, 400, 400);
         var scale = Math.min(canvas.width/marketbg.width, canvas.height / marketbg.height);
         var x = (canvas.width/2) - (marketbg.width/2) * scale;
         var y = (canvas.height/2) - (marketbg.height/2) * scale;

@@ -1,48 +1,86 @@
-canvas {    
-    position: absolute;
-    left: 20%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    width: 35%;
-    height: 40%;        
-    text-align: right;
+body{
+  text-align: center;
+}
+.elements{
+  display: block; 
+  position: relative;
+  
+}
+@media screen and (orientation: portrait) {
+  .elements {  
+    margin-top: 10px;
+    top: 0%;  
+    width: 100%;
+    position: relative;     
   }
+}
+#canvas {    
+  position: relative;
+  /*transform: translate(-50%, -50%);*/
+  width: 50%;
+  right: -23%;
+  text-align: right;
+  padding: 0;
+}
+@media screen and (orientation: portrait) {
+  #canvas {      
+    width: 100%;    
+    left: 0%;
+    margin-top: 10px;     
+  }
+}
   h1 {
     text-align: center;
 } 
-#foodCount{
-    position: absolute;
-    right: 10%;
-    top: 25%;
-    font-weight: bold;
-    font-size: x-large;
-  } 
-  #food{
-    position: absolute;
-    right: 5%;
-    top: 25%;
-    font-weight: bold;
-    font-size: x-large;
-  }  
-  #moneyCount{
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    font-weight: bold;
-    font-size: x-large;
+.foodInv{
+  position: absolute;
+  text-align: justify;
+  text-align-last: center;
+  box-sizing: content-box;   
+  padding: 5px;  
+  font-family: Helvetica,Arial, sans-serif;
+  font-size: x-large;  
+  width: 25%;
+}
+@media screen and (orientation: portrait) {
+  .foodInv {  
+    position:initial;
+    margin-top: 20px;
+    width: 60%;
+    display: table;   
+    margin: 0px auto;   
   }
-  #money{
-    position: absolute;
-    right: 5%;
-    top: 30%;
-    font-weight: bold;
-    font-size: x-large;
-  }  
-  
-  .buttons{
-      position: absolute;
-      bottom: 15%;
-      left: 10%;
+}
+#chicken{
+  margin-bottom: -15px;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+#foodinv{
+  width: 100px;
+  height: 55px;
+  display: table-cell;
+}
+#food{  
+  font-weight: bold;
+  font-size: x-large;
+}
+#moneyinv{
+  width: 100px;
+  height: 55px;
+  display: table-cell;
+}
+#money{  
+  font-weight: bold; 
+  font-size: x-large;
+  margin-right: -27px;
+}
+.buttons{
+      position: relative;
+      text-align: center;
+      margin-top: 10px;
       
   }
   #show{
@@ -55,17 +93,21 @@ canvas {
   #decreaseButton{
     position: relative;
     height: 30px;
-    width: 50px;      
+    width: 50px;   
+    background-color: white;
+    border-style: none;
+    font-size: large;   
   }
   #increaseButton{ 
     position: relative;    
     height: 30px;
     width: 50px;    
-    
+    background-color: white;
+    border-style: none;
+    font-size: large;   
   }
 #buy{
-    position: absolute;
-    right: 50%;
+    position: relative;
     height: 40px;
     width: 100px;
     display: inline-block;
@@ -77,12 +119,11 @@ canvas {
   border-style: none;
   font-size: 120%;
   opacity: 1;
-  background-color: #008891;
+  background-color: #0D5BFF;
     
 }
 #cancel{
-    position: absolute;
-    left: 55%;
+    position: relative;
     height: 40px;
     width: 100px;
     display: inline-block;
@@ -94,6 +135,6 @@ canvas {
   border-style: none;
   font-size: 120%;
   opacity: 1;
-  background-color: #008891;
+  background-color: #0D5BFF;
     
 }

@@ -20,6 +20,12 @@ window.onload = function (){
     function housefun(){
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');  
+        var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+        var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+        var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+        var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+        ctx.fillStyle = bgcol;
+        ctx.fillRect(0, 0, 400, 400);
         var scale = Math.min(canvas.width/housebg.width, canvas.height / housebg.height);
         var x = (canvas.width/2) - (housebg.width/2) * scale;
         var y = (canvas.height/2) - (housebg.height/2) * scale;

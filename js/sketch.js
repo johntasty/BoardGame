@@ -7,7 +7,7 @@ var movement = Number(localStorage.getItem('movementPoints'));
 var closePopup = document.getElementById("popupclose");
 var overlay = document.getElementById("overlay");
 var popup = document.getElementById("popup");
-if (food > 0){
+if (food >= 0){
   movement = 3;
   localStorage.setItem('movementPoints',movement.toString());
 }
@@ -39,23 +39,63 @@ closePopup.onclick = function() {
 };
 // Show Overlay and Popup
 
+document.getElementById('foodplus').onclick = function (){
+  food += 1;
+  if (food < 0){
+    food = 0;
+  }
+  localStorage.setItem('foodInv', food);
+  document.getElementById("food").innerHTML = food;
+}
+document.getElementById('foodminus').onclick = function (){
+  food -= 1;
+  localStorage.setItem('foodInv', food);
+  document.getElementById("food").innerHTML = food;
+}
+
+document.getElementById('moneyplus').onclick = function (){
+  money += 1;
+  localStorage.setItem('moneyInv', money);
+  document.getElementById("money").innerHTML = money;
+}
+
+document.getElementById('moneyminus').onclick = function (){
+  money -= 1;
+  localStorage.setItem('moneyInv', money);
+  document.getElementById("money").innerHTML = money;
+}
+document.getElementById('walkplus').onclick = function (){
+  movement += 1;
+  localStorage.setItem('movementPoints', movement);
+  document.getElementById("movement").innerHTML = movement;
+}
+document.getElementById('walkminus').onclick = function (){
+  movement -= 1;
+  localStorage.setItem('movementPoints', movement);
+  document.getElementById("movement").innerHTML = movement;
+}
+
 
 document.getElementById('endturn').onclick = function() {
   food -= 1;
   if (food < 0){
     movement -=1;    
   };
+  if(food >= 0){
+    window.location.reload();
+    localStorage.setItem('movementPoints', movement);
+  }
   localStorage.setItem('movementPoints', movement);
   localStorage.setItem('foodInv', food);
   document.getElementById("food").innerHTML = food;
   document.getElementById("movement").innerHTML = movement;
+  
   if (movement <= 0){
     overlay.style.display = 'block';
     popup.style.display = 'block';
     }
-  
-
 }
+
 document.getElementById("food").innerHTML = food; 
 document.getElementById('money').innerHTML = money;
 document.getElementById("movement").innerHTML = movement;

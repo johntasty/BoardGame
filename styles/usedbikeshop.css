@@ -1,51 +1,107 @@
+body{
+  text-align: center;
+}
 .elements{
-  align-content: left;
-  position: absolute;
-  top: 20%;
-  width:100%;
+  display: block; 
+  position: relative;
+  
+}
+@media screen and (orientation: portrait) {
+  .elements {  
+    margin-top: 10px;
+    top: 0%;  
+    width: 100%;
+    position: relative;     
+  }
 }
 .play{
-  align-content: center;
+  text-align: center;
+}
+@media screen and (orientation: portrait) {
+  .play {      
+    width: 85%;      
+    display: inline-block;
+    text-align: center;   
+  }
 }
 #canvas {    
   position: relative;
-  left: 2%;    
   /*transform: translate(-50%, -50%);*/
-  width: 45%;
-  height: 50%;        
-  text-align: right; 
+  width: 50%;
+  right: -23%;
+  text-align: right;
+  padding: 0;
+}
+@media screen and (orientation: portrait) {
+  #canvas {      
+    width: 100%;    
+    left: 0%;
+    margin-top: 10px;     
   }
+}
 h1 {
     text-align: center;
 }
 .inventory{
   position: absolute;
-  left: 75%;
-  top: 35%;
+  right: 74%;
   text-align: justify;
-  text-align-last: right;
-  box-sizing: content-box;  
-  width: 25%;
-  height: 35%;
-  transform: translate(-50%, -50%);
+  text-align-last: center;
+  box-sizing: content-box;   
   padding: 5px;  
   font-family: Helvetica,Arial, sans-serif;
-} 
-#money{  
-    font-weight: bold;
-    }  
-
-#bike{   
-    font-weight: bold;    
+  font-size: x-large;  
+  width: 25%;
+}
+@media screen and (orientation: portrait) {
+  .inventory {  
+    position:initial;
+    margin-top: 20px;
+    width: 100%;
+    display: table;   
+    margin-left: -8px;   
   }
+}
 
+#bikeinv{
+  width: 100px;
+  height: 55px;
+  display: table-cell;
+}
+#bike{
+  font-weight: bold; 
+  font-size: x-large;
+}
+#cost{
+  width: 100px;
+  height: 55px;
+  display: table-cell;
+}
+#usedbikeCost{
+  font-weight: bold; 
+  font-size: x-large;
+}
+
+#moneyinv{
+  width: 100px;
+  height: 55px;
+  display: table-cell;
+}
+#money{  
+  font-weight: bold; 
+  font-size: x-large;
+}
+@media screen and (orientation: landscape) {
+  #money {  
+    font-weight: bold; 
+    font-size: x-large;
+    margin-right: -27px;   
+  }
+}
 #buy{
-  text-align: center;
-  position:relative; 
-  width:12%;
-  height: 15%;    
-  left: 30%; 
-  bottom:0; 
+  position: relative;
+  height: 40px;
+  width: 100px;
   display: inline-block;
   margin: 20px auto auto;
   padding: 10px 20px;
@@ -55,15 +111,13 @@ h1 {
   border-style: none;
   font-size: 120%;
   opacity: 1;
-  background-color: #008891;
-    
+  background-color: #0D5BFF;
+  
 }
 #cancel{
-  text-align: center;
   position: relative;
-  width: 12%;
-  height: 15%;  
-  left: 0;
+  height: 40px;
+  width: 100px;
   display: inline-block;
   margin: 20px auto auto;
   padding: 10px 20px;
@@ -73,6 +127,6 @@ h1 {
   border-style: none;
   font-size: 120%;
   opacity: 1;
-  background-color: #008891;
-    
+  background-color: #0D5BFF;
+  
 }
