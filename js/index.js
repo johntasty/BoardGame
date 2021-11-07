@@ -5,7 +5,7 @@ var studyTokens = 0;
 var bikeInv = 0;
 var house = 0;
 var movement = 3;
-
+var tutorialinv = 0;
 window.onload = function () {
     var avatarhead = new Image();
     var avatarheadnum = Math.floor(Math.random()*4)+1;
@@ -24,13 +24,7 @@ window.onload = function () {
         grd.addColorStop(0, "#FF4C1A");
         grd.addColorStop(1, "#EB268F");
         ctx.fillStyle = grd;                          
-        ctx.fillRect(0, 0, canvas.width, canvas.height);   
-       ///var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-       //var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-       //var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
-       //var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-       //ctx.fillStyle = bgcol;
-       //ctx.fillRect(0, 0, 400, 400);
+        ctx.fillRect(0, 0, canvas.width, canvas.height);       
         
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(avatarhead,((canvas.width - avatarhead.width)/2),10);
@@ -47,8 +41,7 @@ window.onload = function () {
     }
 }
 
-//var btnP = document.getElementById("PlayButton"); image as button
-//btnP.innerHTML = '<img src="img/Play1.png">';
+
 
 
 document.getElementById('saveAva').onclick = function(){
@@ -70,6 +63,11 @@ closePopup.onclick = function() {
 };
 // Show Overlay and Popup
 button.onclick = function() {
+    localStorage.setItem('TutorialInv',tutorialinv.toString());
   overlay.style.display = 'block';
   popup.style.display = 'block';
+  var element = document.getElementById("saveAva");
+  element.classList.add("tutorial");
+  var elementplay = document.getElementById("PlayButton");
+  elementplay.classList.add("tutorial");
 }

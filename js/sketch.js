@@ -3,17 +3,24 @@ var foodCount = Number(localStorage.getItem('foodCard'));
 var money = Number(localStorage.getItem('moneyInv'));
 var study = Number(localStorage.getItem('studyInv'));
 var movement = Number(localStorage.getItem('movementPoints'));
-
+var tutorialinv = Number(localStorage.getItem('TutorialInv'));
+var bikeinv = Number(localStorage.getItem('bikeInv'));
 var closePopup = document.getElementById("popupclose");
 var overlay = document.getElementById("overlay");
 var popup = document.getElementById("popup");
-if (food >= 0){
+var tutorialclose = document.getElementById("tutorialclose");
+var tutorial = document.getElementById("tutorial");
+var poptutorial = document.getElementById("tutorialpop");
+if ((food >= 0)&&(bikeinv === 1)){
+  movement = 4;
+  localStorage.setItem('movementPoints',movement.toString());
+}
+else if((food >=0)&&(bikeinv === 0)){
   movement = 3;
   localStorage.setItem('movementPoints',movement.toString());
 }
 let gif;
-function preload(){
-    
+function preload(){    
     url = "img/v1.gif"
     gif = loadImage(url);
 }
@@ -28,6 +35,103 @@ function draw(){
     image(gif,0,0);
 }
 // Close Popup Event
+helptutorial.onclick = function(){
+  tutorial.style.display = 'block';
+    poptutorial.style.display = 'block';
+}
+tutorial.onclick = function(){
+  tutorial.style.display = 'none';
+  poptutorial.style.display = 'none';
+}
+tutorialclose.onclick = function() {
+    
+  tutorial.style.display = 'none';
+  poptutorial.style.display = 'none';
+};
+let tutorialstep = 0;
+document.getElementById('counter').innerHTML = tutorialstep;
+let textshow = "This is your inventory. <br> Food goes down at the end of each turn,if food reaches 0 your "+
+"movement will begin to decrease until you die. Use the markets to buy food!<br>"+
+"Use money to buy suplies, a house or a bike.";
+let textshowQr = "This is the QR scanner, use this to scan the codes on the board.<br>"+
+"Each code you scan takes you to the corresponding interaction page.";
+let textshowNext = "This is your map, on it there are QR codes, scan those to interact with the map. "+
+"<br> The map is divided into districts, moving from district to district costs 1 Movement Point, you have 3 per round."+
+" Buying a bike gives you +1 movement. Moving within a district does not cost movement.";
+let textshowgoal = "The goal of the game is to gather Study Tokens, you can earn those by completing tasks at Zernike Campus."+
+"The amount you need to gather can be decided by the players. Good Luck!"
+//tutorial highlight creation
+
+document.getElementById('next').onclick = function(){  
+  tutorialstep+= 1;
+  if(tutorialstep >= 4){
+    tutorialstep = 4;
+  }
+  document.getElementById('counter').innerHTML = tutorialstep;
+  console.log(tutorialstep); 
+  if (tutorialstep == 1){  
+  var element = document.getElementById('foodinvparent');
+  element.classList.add('inventoryhelp');  
+  document.getElementById('testingshow').innerHTML = textshow;   
+  }
+  if (tutorialstep == 2){
+    var elementimg = document.getElementById('tutorialimg');
+    elementimg.classList.add('boardimg');   
+    var element = document.getElementById('foodinvparent');
+    element.classList.remove('inventoryhelp');              
+    document.getElementById('testingshow').innerHTML = textshowNext;
+    }        
+  if (tutorialstep == 3){
+    var elementtwo = document.getElementById('btn-scan-qr');
+    elementtwo.classList.add('imginventory');
+    var element = document.getElementById('tutorialimg');
+    element.classList.remove('boardimg');          
+    document.getElementById('testingshow').innerHTML = textshowQr;
+    }         
+    if (tutorialstep == 4){
+    var elementtwo = document.getElementById('btn-scan-qr');
+    elementtwo.classList.remove('imginventory');                     
+    document.getElementById('testingshow').innerHTML = textshowgoal;
+    } 
+  }  
+  
+
+document.getElementById('back').onclick = function(){
+  tutorialstep-= 1;
+  document.getElementById('counter').innerHTML = tutorialstep;
+  if(tutorialstep <= 1){
+    tutorialstep = 1;
+  }
+  if (tutorialstep == 1){  
+    var element = document.getElementById('foodinvparent');
+    element.classList.add('inventoryhelp');  
+    var element = document.getElementById('tutorialimg');
+      element.classList.remove('boardimg');  
+    document.getElementById('testingshow').innerHTML = textshow;   
+    }
+    if (tutorialstep == 2){
+      var elementimg = document.getElementById('tutorialimg');
+      elementimg.classList.add('boardimg');   
+      var element = document.getElementById('foodinvparent');
+      element.classList.remove('inventoryhelp'); 
+      var elementtwo = document.getElementById('btn-scan-qr');
+      elementtwo.classList.remove('imginventory');              
+      document.getElementById('testingshow').innerHTML = textshowNext;
+      }        
+    if (tutorialstep == 3){
+      var elementtwo = document.getElementById('btn-scan-qr');
+      elementtwo.classList.add('imginventory');
+      var element = document.getElementById('tutorialimg');
+      element.classList.remove('boardimg');          
+      document.getElementById('testingshow').innerHTML = textshowQr;
+      }         
+      if (tutorialstep == 4){
+      var elementtwo = document.getElementById('btn-scan-qr');
+      elementtwo.classList.remove('imginventory');                     
+      document.getElementById('testingshow').innerHTML = textshowgoal;
+      } 
+  }
+
 overlay.onclick = function(){
     overlay.style.display = 'none';
     popup.style.display = 'none';
@@ -37,6 +141,7 @@ closePopup.onclick = function() {
   overlay.style.display = 'none';
   popup.style.display = 'none';
 };
+
 // Show Overlay and Popup
 
 document.getElementById('foodplus').onclick = function (){
@@ -99,12 +204,15 @@ document.getElementById('endturn').onclick = function() {
 document.getElementById("food").innerHTML = food; 
 document.getElementById('money').innerHTML = money;
 document.getElementById("movement").innerHTML = movement;
-
 var avatarheadname = localStorage.getItem('headAvatar');
 window.onload = function () {
-    
-   
-    if (localStorage.getItem("houseName") === null) {
+  if (tutorialinv == 0){
+    tutorial.style.display = 'block';
+    poptutorial.style.display = 'block';
+    tutorialinv += 1;
+    localStorage.setItem('TutorialInv',tutorialinv);
+  }
+    if ((localStorage.getItem("houseName") === null) && (localStorage.getItem("bikeName") === null)) {
        var avatarhead = new Image();
        avatarhead.src = "img/" + avatarheadname;
  
@@ -114,37 +222,106 @@ window.onload = function () {
       function buildAvatar(){
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d');    
-      
+      var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+      var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+      var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+      var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+      ctx.fillStyle = bgcol;
+      ctx.fillRect(0, 0, 400, 400);
       ctx.drawImage(avatarhead,((canvas.width - avatarhead.width)/2),10);
       
     }
-  }else {
-      var housename = localStorage.getItem("houseName");
-      var house = new Image();
-      house.src = "img/" + housename;
+  }else if((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") === null)){
+      var bikename = localStorage.getItem("bikeName");
+      var bike = new Image();
+      bike.src = "img/" + bikename;
       var avatarhead = new Image();
-        avatarhead.src = "img/" + avatarheadname;
-       avatarhead.onload = function(){
+      avatarhead.src = "img/" + avatarheadname;
+      avatarhead.onload = function(){
          buildAvatar();
      }
-      console.log(house);
        function buildAvatar(){
        var canvas = document.getElementById('canvas');
        var ctx = canvas.getContext('2d'); 
+       var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+       var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+       ctx.fillStyle = bgcol;
+       ctx.fillRect(0, 0, 400, 400);       
+       var scalebike = Math.min((canvas.width/bike.width, canvas.height / bike.height)*0.6);
+       var xbike = (canvas.width/1.3) - (bike.width/2) * scalebike;
+       var ybike = (canvas.height/1.3) - (bike.height/2) * scalebike;
+       ctx.drawImage(bike, xbike, ybike, bike.width * scalebike, bike.height * scalebike); 
+       var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
+       var xhead = (canvas.width/10) - (avatarhead.width/2) * scalehead;
+       var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
+       ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);
+       }
+  }
+  else if ((localStorage.getItem("bikeName") === null) && (localStorage.getItem("houseName") !== null)){
+    var housename = localStorage.getItem("houseName");
+    var house = new Image();
+    house.src = "img/" + housename;
+    var avatarhead = new Image();
+    avatarhead.src = "img/" + avatarheadname;
+    avatarhead.onload = function(){
+       buildAvatar();
+   }
+     function buildAvatar(){
+     var canvas = document.getElementById('canvas');
+     var ctx = canvas.getContext('2d'); 
+     var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+     var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+     var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+     var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+     ctx.fillStyle = bgcol;
+     ctx.fillRect(0, 0, 400, 400);
+     var scale = Math.min((canvas.width/house.width, canvas.height / house.height)*1.2);
+     var x = (canvas.width/2) - (house.width/2) * scale;
+     var y = (canvas.height/2) - (house.height/2) * scale;
+     ctx.drawImage(house, x, y, house.width * scale, house.height * scale);        
+     var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
+     var xhead = (canvas.width/6) - (avatarhead.width/2) * scalehead;
+     var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
+     ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);  
+}
+}
+  else if((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") !== null)) {
+      var housename = localStorage.getItem("houseName");
+      var bikename = localStorage.getItem("bikeName");
+      var house = new Image();
+      var bike = new Image();
+      var avatarhead = new Image();
+      house.src = "img/" + housename;      
+      bike.src = "img/" + bikename;      
+      avatarhead.src = "img/" + avatarheadname;
+      avatarhead.onload = function(){
+         buildAvatar();
+     }
+       function buildAvatar(){
+       var canvas = document.getElementById('canvas');
+       var ctx = canvas.getContext('2d'); 
+       var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+       var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+       ctx.fillStyle = bgcol;
+       ctx.fillRect(0, 0, 400, 400);
        var scale = Math.min((canvas.width/house.width, canvas.height / house.height)*1.2);
        var x = (canvas.width/2) - (house.width/2) * scale;
        var y = (canvas.height/2) - (house.height/2) * scale;
        ctx.drawImage(house, x, y, house.width * scale, house.height * scale); 
+       var scalebike = Math.min((canvas.width/bike.width, canvas.height / bike.height)*0.6);
+       var xbike = (canvas.width/1.3) - (bike.width/2) * scalebike;
+       var ybike = (canvas.height/1.3) - (bike.height/2) * scalebike;
+       ctx.drawImage(bike, xbike, ybike, bike.width * scalebike, bike.height * scalebike); 
        var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
        var xhead = (canvas.width/6) - (avatarhead.width/2) * scalehead;
        var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
-       ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead); 
-
-       
+       ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);        
      }
-  }
-    
-    
+  }    
 }
 document.getElementById('storageClear').onclick = function() {
   localStorage.clear();

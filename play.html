@@ -19,7 +19,9 @@
     <div id="result">
     <div class="contain">
         <h1>Ultimate Student</h1>
-        <button id="storageClear" >X</button>
+        <span hidden id="counter"></span>       
+        <a id="storageClear"><img src="img/exit1.png"></a>
+        <button id="helptutorial">?</button>       
     <div id="container">     
         <a id="btn-scan-qr">
           <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
@@ -47,11 +49,34 @@
                 <div id="canvasrip"></div>
             </div>
         </div> 
-</div>
+    </div>
+    <div id="tutorial">
+        <div id="tutorialimg"></div>
+
+    </div>
+        <div id="tutorialpop">
+            <div class="tutorialcontrols">
+                <span id="tutorialclose">X</span>
+            </div>
+            <div class="tutorialcontent">
+                
+                <span id="testingshow">
+                    This is the Play page where you will find all the information for your character!
+                    <br>
+                    Click Next to see how to Play.
+                </span>
+                <br>
+                <a id="back"><img src="img/left1.png"></a>
+                <a id="next"><img src="img/right1.png"></a>
+                
+            </div>
+        </div>
     <div class="elements">
-    <div class="foodinv">
+        
+    <div class="foodinvparent" id="foodinvparent">
             <div id="foodinv">
-                <img id="chicken" src="img/chicken1.png"/><span id="food"></span>                
+                <img id="chicken" src="img/chicken1.png"/><span id="food"></span> 
+                               
                     <button id="foodplus">+</button>                        
                     <button id="foodminus">-</button>                
             </div>

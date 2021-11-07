@@ -80,3 +80,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+.imginventory{
+  position: relative;
+  z-index: 200;
+}
