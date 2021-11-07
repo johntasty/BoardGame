@@ -211,83 +211,8 @@ window.onload = function () {
     poptutorial.style.display = 'block';
     tutorialinv += 1;
     localStorage.setItem('TutorialInv',tutorialinv);
-  }
-    if ((localStorage.getItem("houseName") === null) && (localStorage.getItem("bikeName") === null)) {
-       var avatarhead = new Image();
-       avatarhead.src = "img/" + avatarheadname;
- 
-      avatarhead.onload = function(){
-        buildAvatar();
     }
-      function buildAvatar(){
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');    
-      var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-      var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-      var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
-      var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-      ctx.fillStyle = bgcol;
-      ctx.fillRect(0, 0, 400, 400);
-      ctx.drawImage(avatarhead,((canvas.width - avatarhead.width)/2),10);
-      
-    }
-  }else if((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") === null)){
-      var bikename = localStorage.getItem("bikeName");
-      var bike = new Image();
-      bike.src = "img/" + bikename;
-      var avatarhead = new Image();
-      avatarhead.src = "img/" + avatarheadname;
-      avatarhead.onload = function(){
-         buildAvatar();
-     }
-       function buildAvatar(){
-       var canvas = document.getElementById('canvas');
-       var ctx = canvas.getContext('2d'); 
-       var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-       var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-       var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
-       var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-       ctx.fillStyle = bgcol;
-       ctx.fillRect(0, 0, 400, 400);       
-       var scalebike = Math.min((canvas.width/bike.width, canvas.height / bike.height)*0.6);
-       var xbike = (canvas.width/1.3) - (bike.width/2) * scalebike;
-       var ybike = (canvas.height/1.3) - (bike.height/2) * scalebike;
-       ctx.drawImage(bike, xbike, ybike, bike.width * scalebike, bike.height * scalebike); 
-       var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
-       var xhead = (canvas.width/10) - (avatarhead.width/2) * scalehead;
-       var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
-       ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);
-       }
-  }
-  else if ((localStorage.getItem("bikeName") === null) && (localStorage.getItem("houseName") !== null)){
-    var housename = localStorage.getItem("houseName");
-    var house = new Image();
-    house.src = "img/" + housename;
-    var avatarhead = new Image();
-    avatarhead.src = "img/" + avatarheadname;
-    avatarhead.onload = function(){
-       buildAvatar();
-   }
-     function buildAvatar(){
-     var canvas = document.getElementById('canvas');
-     var ctx = canvas.getContext('2d'); 
-     var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-     var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
-     var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
-     var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-     ctx.fillStyle = bgcol;
-     ctx.fillRect(0, 0, 400, 400);
-     var scale = Math.min((canvas.width/house.width, canvas.height / house.height)*1.2);
-     var x = (canvas.width/2) - (house.width/2) * scale;
-     var y = (canvas.height/2) - (house.height/2) * scale;
-     ctx.drawImage(house, x, y, house.width * scale, house.height * scale);        
-     var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
-     var xhead = (canvas.width/6) - (avatarhead.width/2) * scalehead;
-     var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
-     ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);  
-}
-}
-  else if((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") !== null)) {
+  if ((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") !== null)) {
       var housename = localStorage.getItem("houseName");
       var bikename = localStorage.getItem("bikeName");
       var house = new Image();
@@ -321,7 +246,83 @@ window.onload = function () {
        var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
        ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);        
      }
-  }    
+  }
+  else if((localStorage.getItem("bikeName") !== null) && (localStorage.getItem("houseName") === null)){
+      var bikename = localStorage.getItem("bikeName");
+      var bike = new Image();
+      bike.src = "img/" + bikename;
+      var avatarhead = new Image();
+      avatarhead.src = "img/" + avatarheadname;
+      avatarhead.onload = function(){
+         buildAvatar();
+     }
+       function buildAvatar(){
+       var canvas = document.getElementById('canvas');
+       var ctx = canvas.getContext('2d'); 
+       var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+       var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+       var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+       ctx.fillStyle = bgcol;
+       ctx.fillRect(0, 0, 400, 400);       
+       var scalebike = Math.min((canvas.width/bike.width, canvas.height / bike.height)*0.6);
+       var xbike = (canvas.width/1.3) - (bike.width/2) * scalebike;
+       var ybike = (canvas.height/1.3) - (bike.height/2) * scalebike;
+       ctx.drawImage(bike, xbike, ybike, bike.width * scalebike, bike.height * scalebike); 
+       var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
+       var xhead = (canvas.width/10) - (avatarhead.width/2) * scalehead;
+       var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
+       ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);
+       }
+  }
+  else if ((localStorage.getItem("bikeName") === null) && (localStorage.getItem("houseName") !== null)){
+      var housename = localStorage.getItem("houseName");
+      var house = new Image();
+      house.src = "img/" + housename;
+      var avatarhead = new Image();
+      avatarhead.src = "img/" + avatarheadname;
+      avatarhead.onload = function(){
+        buildAvatar();
+    }
+      function buildAvatar(){
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d'); 
+      var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+      var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+      var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+      var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+      ctx.fillStyle = bgcol;
+      ctx.fillRect(0, 0, 400, 400);
+      var scale = Math.min((canvas.width/house.width, canvas.height / house.height)*1.2);
+      var x = (canvas.width/2) - (house.width/2) * scale;
+      var y = (canvas.height/2) - (house.height/2) * scale;
+      ctx.drawImage(house, x, y, house.width * scale, house.height * scale);        
+      var scalehead = Math.min((canvas.width/avatarhead.width, canvas.height / avatarhead.height)*0.5);
+      var xhead = (canvas.width/6) - (avatarhead.width/2) * scalehead;
+      var yhead = (canvas.height/2) - (avatarhead.height/2) * scalehead;  
+      ctx.drawImage(avatarhead, xhead, yhead, avatarhead.width * scalehead, avatarhead.height * scalehead);  
+    }
+  }
+  else if  ((localStorage.getItem("houseName") === null) && (localStorage.getItem("bikeName") === null)) {
+      var avatarhead = new Image();
+      avatarhead.src = "img/" + avatarheadname;
+
+    avatarhead.onload = function(){
+      buildAvatar();
+  }
+    function buildAvatar(){
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');    
+    var r = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+    var g = Math.floor(Math.random() * (255 - 100 + 1) + 100);
+    var b = Math.floor(Math.random() * (255 - 100 + 1) + 100); 
+    var bgcol = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+    ctx.fillStyle = bgcol;
+    ctx.fillRect(0, 0, 400, 400);
+    ctx.drawImage(avatarhead,((canvas.width - avatarhead.width)/2),10);
+    
+    }
+  }  
 }
 document.getElementById('storageClear').onclick = function() {
   localStorage.clear();
