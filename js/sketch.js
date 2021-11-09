@@ -248,6 +248,7 @@ window.onload = function () {
   if (tutorialinv == 0){
     tutorial.style.display = 'block';
     poptutorial.style.display = 'block';
+    mapimg.style.display = 'block';
     tutorialinv += 1;
     localStorage.setItem('TutorialInv',tutorialinv);
     }
