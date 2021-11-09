@@ -12,7 +12,7 @@ document.getElementById("bike").innerHTML = biketotal;
 window.onload = function (){    
 
     var bikeused = new Image();
-    var usedbikenum = Math.floor(Math.random()*2)+1;
+    var usedbikenum = Math.floor(Math.random()*4)+1;
     var usedbikename = "usedbike" + usedbikenum + ".png";
     bikeused.src = "img/" + usedbikename;
 
