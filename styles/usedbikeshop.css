@@ -27,6 +27,7 @@ body{
 }
 #canvas {    
   position: relative;
+  border-radius: 25px;
   /*transform: translate(-50%, -50%);*/
   width: 50%;
   right: -23%;

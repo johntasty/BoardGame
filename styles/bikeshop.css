@@ -28,6 +28,7 @@ body{
 #canvas {    
   position: relative;
   /*transform: translate(-50%, -50%);*/
+  border-radius: 25px;
   width: 50%;
   right: -23%;
   text-align: right;

@@ -14,7 +14,10 @@ window.onload = function () {
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');       
     
-        ctx.drawImage(jobhead,((canvas.width - jobhead.width)/2),10);
+        //var scale = Math.min(canvas.width/jobhead.width, canvas.height / jobhead.height)*1;
+        //var x = (canvas.width/2) - (jobhead.width/2) * scale;
+        //var y = (canvas.height/2) - (jobhead.height/2) * scale;
+        ctx.drawImage(jobhead,0,0);
     }
 }
 

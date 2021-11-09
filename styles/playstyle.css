@@ -56,6 +56,7 @@ body{
 #canvas {    
   position: relative;
   /*transform: translate(-50%, -50%);*/
+  border-radius: 25px;
   width: 45%;
   height: 30%;
   right: -23%;
@@ -90,16 +91,16 @@ h1{
   .foodinvparent {  
     position:relative;
     margin-top: 20px;
-    width: 100%;
+    width: 95%;
     display: table;   
     margin: 0px auto;   
   }
 }
 #chicken{
-  margin-bottom: -15px;
-  margin-right: 7px;
-  width: 50px;
-  height: 50px;
+  margin-top: 7px;
+  margin-right: 16px;
+  width: 40px;
+  height: 28px;
 }
 #move{
   width: 100px;
@@ -277,11 +278,14 @@ h1{
   height: 100px;
   width: 100px;
 }
+#tutorialimg{
+  display: none;
+}
 #tutorialpop{
   display: none;
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 70%;
   border-radius: 25px;
   background: #cbdcff;
   width: 200px;
@@ -295,7 +299,7 @@ h1{
   #tutorialpop {      
     display: none;
     position: absolute;
-    top: 75%;
+    top: 48%;
     left: 50%;
     background: #cbdcff;
     width: 200px;
@@ -360,18 +364,51 @@ h1{
   z-index: 200;
 }
 .boardimg {
-  background-image: url('../img/head1.png');
+  background-image: url('../img/maptutorial.png');
   background-repeat: no-repeat;
   width:35%;
   height: 250px;
+  position: absolute;
+  left: 25%;
+  top: 6%;
+  z-index: 200;
  
 }
 @media screen and (orientation: portrait) {
   .boardimg {      
-    background-image: url('../img/head1.png');
+    background-image: url('../img/maptutorial.png');
     background-repeat: no-repeat;
     width:50%;
     height: 250px;
-    margin: 0 auto;
+    position: absolute;
+    left: 25%;
+    top: 6%;
+    z-index: 200;
   }
+  }
+.busimg{
+  background-image: url('../img/busstop.png');
+  background-repeat: no-repeat;
+  width:15%;
+  height: 100px;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  z-index: 200;
+}
+@media screen and (orientation: portrait) {
+  .busimg {      
+    background-image: url('../img/busstop.png');
+    background-repeat: no-repeat;
+    width:30%;
+    height: 100px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    z-index: 200;
+  }
+  }
+  .endturnhigh{
+    z-index: 200;
+    position: relative;
   }

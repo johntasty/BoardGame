@@ -1,47 +1,102 @@
 body{
+  text-align: center;
+  background-image: url('../img/martinitoren1.png ');
+  background-repeat: no-repeat;
+  background-position-y: 100px;
+  background-position-x: 0px;
   font-family: 'Oswald', sans-serif;
 }
+@media screen and (orientation: landscape) {
+  #result {      
+  text-align: center;
+  background-image: url('../img/martinitoren1.png ');
+  background-repeat: no-repeat;
+  background-position-y: 25px;         
+  }
+}
+#result{
+  overflow: hidden;
+}
+@media screen and (orientation: portrait) {
+  #result {      
+    width: 100%;      
+    height: 100%;
+    text-align: center;         
+  }
+}
 .elements{
-    align-content: left;
-    position: absolute;
-    top: 25%;
-    width: 100%;
-    
-  }
-  #canvas {    
-      position: relative;
-      left: 2%;    
-      /*transform: translate(-50%, -50%);*/
-      width: 45%;
-      height: 50%;
-          
-      text-align: right;
-    }
-  h1 {  
-    
-    text-align: center;
-    
-  }
+  display: block; 
+  position: relative;
   
+}
+@media screen and (orientation: portrait) {
+  .elements {  
+    margin-top: 20px;
+    top: 0%;  
+    width: 100%;
+    height: 100%;  
+    position: relative;     
+  }
+}
+.play{
+  text-align: center;
+}
+@media screen and (orientation: portrait) {
+  .play {      
+    width: 85%;      
+    display: inline-block;
+    text-align: center;   
+  }
+}
+#canvas {    
+  position: relative;
+  /*transform: translate(-50%, -50%);*/
+  border-radius: 25px;
+  right: -23%;
+  text-align: right;
+  padding: 0;
+}
+@media screen and (orientation: portrait) {
+  #canvas {      
+    left: 0%;
+    margin-top: 50px;     
+  }
+}
+h1{  
+  text-align: center; 
+  margin-top: 0px;   
+} 
+@media screen and (orientation: landscape) {
+  #buttons {      
+    width: fit-content;      
+    position: absolute;
+    top: 20%; 
+  }
+}  
   #PlayButton{
+    text-align: center;
     position:relative; 
-    width:10%;
-    height: 10%;    
-    left: 45%; 
+    width:fit-content;
+    height: 15%;    
     bottom:0%; 
     display: inline-block;
     margin: 20px auto auto;
-    padding: 10px 0px;
+    padding: 10px 20px;
     max-width: 200px;
     min-width: 100px;
     color: #fff;
     border-style: none;
     font-size: 120%;
     opacity: 1;
-    background-color: #0D5BFF;  
+    background-color: #0D5BFF;
     
   }
  #home{
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  height: 15%;  
+  left: 0;
   display: inline-block;
   margin: 20px auto auto;
   padding: 10px 20px;
@@ -55,16 +110,24 @@ body{
  }
   #box1{
     position: absolute;
-    left: 75%;
-    top: 40%;
+    border-radius: 25px;
+    left: 2%;
     text-align: justify;
     text-align-last: center;
-    box-sizing: content-box;  
-    width: 45%;
-    height: 55%;
-    transform: translate(-50%, -50%);
-    padding: 10px;  
-    border: 3px solid black;
-    font-family: Helvetica,Arial, sans-serif;
+    box-sizing: content-box;   
+    padding: 0px;  
+    font-family: 'Oswald', sans-serif;
+    font-size: x-large;  
+    width: 15%;
+    height: 85%;
+  }
+  @media screen and (orientation: portrait) {
+    #box1 {  
+      position:relative;
+      margin-top: 20px;
+      width: 100%;
+      display: table;   
+      margin: 0px auto;   
+    }
   }
   

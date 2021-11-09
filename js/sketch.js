@@ -11,6 +11,7 @@ var popup = document.getElementById("popup");
 var tutorialclose = document.getElementById("tutorialclose");
 var tutorial = document.getElementById("tutorial");
 var poptutorial = document.getElementById("tutorialpop");
+var mapimg = document.getElementById("tutorialimg");
 if ((food >= 0)&&(bikeinv === 1)){
   movement = 4;
   localStorage.setItem('movementPoints',movement.toString());
@@ -37,62 +38,78 @@ function draw(){
 // Close Popup Event
 helptutorial.onclick = function(){
   tutorial.style.display = 'block';
-    poptutorial.style.display = 'block';
+  poptutorial.style.display = 'block';
+  mapimg.style.display = 'block';
 }
 tutorial.onclick = function(){
   tutorial.style.display = 'none';
   poptutorial.style.display = 'none';
+  mapimg.style.display = 'none';
 }
 tutorialclose.onclick = function() {
-    
+  mapimg.style.display = 'none';  
   tutorial.style.display = 'none';
   poptutorial.style.display = 'none';
 };
 let tutorialstep = 0;
 document.getElementById('counter').innerHTML = tutorialstep;
-let textshow = "This is your inventory. <br> Food goes down at the end of each turn,if food reaches 0 your "+
-"movement will begin to decrease until you die. Use the markets to buy food!<br>"+
-"Use money to buy suplies, a house or a bike.";
+let textshow = "This is your inventory. <br>Use the markets to buy food!<br>"+
+"Use money to buy suplies, a house or a bike. A house is needed to win the game, and food is needed to survive.";
 let textshowQr = "This is the QR scanner, use this to scan the codes on the board.<br>"+
 "Each code you scan takes you to the corresponding interaction page.";
 let textshowNext = "This is your map, on it there are QR codes, scan those to interact with the map. "+
 "<br> The map is divided into districts, moving from district to district costs 1 Movement Point, you have 3 per round."+
 " Buying a bike gives you +1 movement. Moving within a district does not cost movement.";
-let textshowgoal = "The goal of the game is to gather Study Tokens, you can earn those by completing tasks at Zernike Campus."+
+let textshowgoal = "The goal of the game is to gather Study Tokens, you can earn those by Study Cards at Zernike Campus."+
 "The amount you need to gather can be decided by the players. Good Luck!"
+let textbus = "You can also use the bus to move around the map, using the bus does not cost movement BUT triggers an Event. Draw an event card"
+let textending = "At the end of each round press end turn, watch your food, if it goes below 0 your movement will decrease!"
 //tutorial highlight creation
 
 document.getElementById('next').onclick = function(){  
   tutorialstep+= 1;
-  if(tutorialstep >= 4){
-    tutorialstep = 4;
+  if(tutorialstep >= 6){
+    tutorialstep = 6;
   }
   document.getElementById('counter').innerHTML = tutorialstep;
   console.log(tutorialstep); 
   if (tutorialstep == 1){  
-  var element = document.getElementById('foodinvparent');
-  element.classList.add('inventoryhelp');  
-  document.getElementById('testingshow').innerHTML = textshow;   
+    document.getElementById('testingshow').innerHTML = textshowgoal;
   }
-  if (tutorialstep == 2){
+  if (tutorialstep == 2){    
     var elementimg = document.getElementById('tutorialimg');
-    elementimg.classList.add('boardimg');   
-    var element = document.getElementById('foodinvparent');
-    element.classList.remove('inventoryhelp');              
-    document.getElementById('testingshow').innerHTML = textshowNext;
-    }        
+    elementimg.classList.add('boardimg');    
+    document.getElementById('testingshow').innerHTML = textshowNext; 
+  }
   if (tutorialstep == 3){
+    var elementbusimg = document.getElementById('tutorialimg');
+    elementbusimg.classList.add('busimg'); 
+    var elementimg = document.getElementById('tutorialimg');
+    elementimg.classList.remove('boardimg');    
+    document.getElementById('testingshow').innerHTML = textbus;      
+    }        
+  if (tutorialstep == 4){
     var elementtwo = document.getElementById('btn-scan-qr');
     elementtwo.classList.add('imginventory');
-    var element = document.getElementById('tutorialimg');
-    element.classList.remove('boardimg');          
+    var elementbusimg = document.getElementById('tutorialimg');
+    elementbusimg.classList.remove('busimg');          
     document.getElementById('testingshow').innerHTML = textshowQr;
     }         
-    if (tutorialstep == 4){
+    if (tutorialstep == 5){
+    var element = document.getElementById('foodinvparent');
+    element.classList.add('inventoryhelp');        
     var elementtwo = document.getElementById('btn-scan-qr');
     elementtwo.classList.remove('imginventory');                     
-    document.getElementById('testingshow').innerHTML = textshowgoal;
+    document.getElementById('testingshow').innerHTML = textshow; 
+    }
+    if (tutorialstep == 6){
+      var elementend = document.getElementById("endturn");
+      elementend.classList.add('endturnhigh');
+      var element = document.getElementById('foodinvparent');
+      element.classList.remove('inventoryhelp');  
+      document.getElementById('testingshow').innerHTML = textending;
     } 
+    
   }  
   
 
@@ -103,13 +120,13 @@ document.getElementById('back').onclick = function(){
     tutorialstep = 1;
   }
   if (tutorialstep == 1){  
+    document.getElementById('testingshow').innerHTML = textshowgoal;
     var element = document.getElementById('foodinvparent');
-    element.classList.add('inventoryhelp');  
-    var element = document.getElementById('tutorialimg');
-      element.classList.remove('boardimg');  
-    document.getElementById('testingshow').innerHTML = textshow;   
+    element.classList.remove('inventoryhelp');            
     }
     if (tutorialstep == 2){
+      var elementbusimg = document.getElementById('tutorialimg');
+      elementbusimg.classList.remove('busimg');   
       var elementimg = document.getElementById('tutorialimg');
       elementimg.classList.add('boardimg');   
       var element = document.getElementById('foodinvparent');
@@ -119,17 +136,39 @@ document.getElementById('back').onclick = function(){
       document.getElementById('testingshow').innerHTML = textshowNext;
       }        
     if (tutorialstep == 3){
+      var elementimg = document.getElementById('tutorialimg');
+      elementimg.classList.remove('boardimg'); 
+      var elementbusimg = document.getElementById('tutorialimg');
+      elementbusimg.classList.add('busimg');   
       var elementtwo = document.getElementById('btn-scan-qr');
-      elementtwo.classList.add('imginventory');
-      var element = document.getElementById('tutorialimg');
-      element.classList.remove('boardimg');          
-      document.getElementById('testingshow').innerHTML = textshowQr;
+      elementtwo.classList.remove('imginventory');             
+      document.getElementById('testingshow').innerHTML = textbus; 
       }         
       if (tutorialstep == 4){
-      var elementtwo = document.getElementById('btn-scan-qr');
-      elementtwo.classList.remove('imginventory');                     
-      document.getElementById('testingshow').innerHTML = textshowgoal;
+        var elementtwo = document.getElementById('btn-scan-qr');
+        elementtwo.classList.add('imginventory');
+        var element = document.getElementById('foodinvparent');
+        element.classList.remove('inventoryhelp');     
+        var element = document.getElementById('tutorialimg');
+        element.classList.remove('boardimg');          
+        document.getElementById('testingshow').innerHTML = textshowQr;
       } 
+      if (tutorialstep == 5){
+      var element = document.getElementById('foodinvparent');
+      element.classList.add('inventoryhelp');        
+      var elementtwo = document.getElementById('btn-scan-qr');
+      elementtwo.classList.remove('imginventory');  
+      var elementend = document.getElementById("endturn");
+      elementend.classList.remove('endturnhigh');                   
+      document.getElementById('testingshow').innerHTML = textshow; 
+      }
+      if (tutorialstep == 6){
+        var elementend = document.getElementById("endturn");
+        elementend.classList.add('endturnhigh');
+        var element = document.getElementById('foodinvparent');
+        element.classList.remove('inventoryhelp');  
+        document.getElementById('testingshow').innerHTML = textending;
+      }
   }
 
 overlay.onclick = function(){

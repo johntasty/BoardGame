@@ -26,6 +26,7 @@ body{
 
 #canvas {    
     position: relative;
+    border-radius: 25px;
     /*transform: translate(-50%, -50%);*/
     width: 45%;
     height: 30%;
@@ -109,7 +110,7 @@ h1 {
   #popup {      
     display: none;
     position: absolute;
-    top: 75%;
+    top: 35%;
     left: 50%;
     background: #cbdcff;
     width: 200px;

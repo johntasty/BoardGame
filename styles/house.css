@@ -1,44 +1,112 @@
 body{
+  text-align: center;
+  background-image: url('../img/martinitoren1.png ');
+  background-repeat: no-repeat;
+  background-position-y: 175px;
+  background-position-x: 45px;
   font-family: 'Oswald', sans-serif;
 }
+@media screen and (orientation: landscape) {
+  #result {      
+  text-align: center;
+  background-image: url('../img/martinitoren1.png ');
+  background-repeat: no-repeat;
+  background-position-y: 25px;         
+  }
+}
+#result{
+  overflow: hidden;
+}
+@media screen and (orientation: portrait) {
+  #result {      
+    width: 100%;      
+    height: 100%;
+    text-align: center;        
+    position: relative; 
+    left: 0%;
+  }
+}
 .elements{
-  align-content: left;
-  position: absolute;
-  top: 25%;
-  width: 100%;
+  display: block; 
+  position: relative;
+  
+}
+@media screen and (orientation: portrait) {
+  .elements {  
+    margin-top: 20px;
+    top: 0%;  
+    width: 100%;
+    height: 100%;  
+    position: relative;     
+  }
 }
 .play{
-  align-content: center;
+  text-align: center;
 }
-#canvas {        
-    position: relative;
-    left: 2%;    
-    /*transform: translate(-50%, -50%);*/
-    width: 45%;
-    height: 50%;        
-    text-align: right;  
+@media screen and (orientation: portrait) {
+  .play {      
+    width: 100%;      
+    display: inline-block;
+    text-align: center;   
   }
-
-h1 {
-    text-align: center;
+}
+#canvas {    
+  position: relative;
+  border-radius: 25px;
+  /*transform: translate(-50%, -50%);*/
+  width: 45%;
+  height: 30%;
+  right: -23%;
+  text-align: right;
+  padding: 0;
+}
+@media screen and (orientation: portrait) {
+  #canvas {      
+    width: 100%;    
+    left: 0%;
+    margin-top: 50px;     
+  }
+}
+h1{  
+  text-align: center; 
+  margin-top: 50px;   
 } 
 
 .inventory{
   position: absolute;
-  left: 75%;
-  top: 45%;
+  border-radius: 25px;
+  left: 2%;
   text-align: justify;
-  text-align-last: right;
-  box-sizing: content-box;  
-  width: 25%;
-  height: 35%;
-  transform: translate(-50%, -50%);
-  padding: 5px;  
-  font-family: Helvetica,Arial, sans-serif;
-  font-size: x-large;
-  
+  text-align-last: center;
+  box-sizing: content-box;   
+  padding: 0px;  
+  font-family: 'Oswald', sans-serif;
+  font-size: x-large;  
+  width: 15%;
+  height: 85%;
 }
-  #money{   
+@media screen and (orientation: portrait) {
+  .inventory {  
+    position:relative;
+    margin-top: 20px;
+    width: 65%;
+    display: table;   
+    margin: 0px auto;   
+  }
+}
+#costing{
+  width: 100px;
+  height: 55px;
+  font-weight: bold;
+  font-size: x-large;
+  display: table-cell;
+}
+#moneyinv{
+  width: 100px;
+  height: 25px;
+  display: table-cell;
+}
+#money{   
     font-weight: bold;   
   }  
 
